@@ -1,0 +1,57 @@
+<h1>Skate Park</h1>
+
+<div class="py-4">
+    <h2>Lista de participantes</h2>
+
+    <hr />
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Años de experiencia</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each usuarios}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>
+                    <img class="center" src='{{this.photo}}' alt="" width="100"  >
+                </td>
+                <td>{{this.nombre}}</td>
+                <td>{{this.anos}}</td>
+                <td>{{this.especialidad}}</td>
+                <td {{#if this.auth }}class="text-success font-weight-bold"{{else}}class="text-warning font-weight-bold"{{/if}}>{{#if this.auth }}Aprobado{{else}}En revisión{{/if}}</td>
+            </tr>
+            {{/each}}
+            {{!-- <tr>
+                <th scope="row">2</th>
+                <td>
+                    <div></div>
+                </td>
+                <td>Evelien Bouilliart</td>
+                <td>10</td>
+                <td>Heelflip</td>
+                <td class="text-success font-weight-bold">Aprobado</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>
+                    <div></div>
+                </td>
+                <td>Danny Way</td>
+                <td>8</td>
+                <td>Ollie</td>
+                <td class="text-warning font-weight-bold">En revisión</td>
+            </tr> --}}
+        </tbody>
+    </table>
+    <a href="/ingreso">Iniciar Sesión</a> |
+    <a href="/">Registrarme</a>
+</div>
+
